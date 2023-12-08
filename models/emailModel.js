@@ -5,6 +5,8 @@ dotenv.config();
 
 const sendEmail = async (to) => {
     try {
+
+        console.log('log to email', to);
         // Generate a random 4-digit OTP
         const otp = Math.floor(1000 + Math.random() * 9000);
 
@@ -13,7 +15,8 @@ const sendEmail = async (to) => {
         otpExpiry.setMinutes(otpExpiry.getMinutes() + 2);
 
         const transporter = nodemailer.createTransport({
-            service: 'Gmail',
+            host: 'smtp.gmail.com',
+            // port: 587,
             auth: {
                 user: process.env.EMAIL, // Replace with your Gmail address
                 pass: process.env.PASSWORD, // Replace with your Gmail password
