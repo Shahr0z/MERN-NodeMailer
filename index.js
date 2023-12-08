@@ -15,3 +15,5 @@ app.use('/', Routes);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+//http://localhost:8000/email
